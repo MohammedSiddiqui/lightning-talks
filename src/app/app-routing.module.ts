@@ -18,6 +18,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'login',
+    loadChildren: './auth/auth.module#AuthModule',
+  },
 ];
 
 @NgModule({
