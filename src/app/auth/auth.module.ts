@@ -10,7 +10,7 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     MaterialModule,
-    AuthRoutingModule
-  ]
+    AuthRoutingModule,
+  ],
 })
 export class AuthModule { }
