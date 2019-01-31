@@ -17,7 +17,11 @@
                             <input matInput placeholder="Password" type='password' />
                     </mat-form-field>
                     <br />
-                    <button mat-raised-button color="primary" class='login-button'>Login</button>
+                    <button 
+                        mat-raised-button 
+                        color="primary" 
+                        class='login-button'
+                        (click)="onLoginButtonClicked()">Login</button>
                 </mat-card-content>
         </mat-card>
     </div>

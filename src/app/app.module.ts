@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ShellModule } from './shell/shell.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ShellModule } from './shell/shell.module';
     CoreModule,
     ShellModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
