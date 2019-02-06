@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../core/auth.service';
 
 
 @Component({
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  readonly login;
+  user = {
+    name: '',
+    password: '',
+  };
 
-  constructor() { }
+  constructor(private auth: AuthService) {
+   }
 
   ngOnInit() {
   }
 
   onLoginButtonClicked () {
-    console.log('Login Button was clicked. Calling the Auth Service');
+    // this.login(this.user);
+    this.auth.loginUser(this.user);
   }
 
 }
