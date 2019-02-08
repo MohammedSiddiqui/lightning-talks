@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/landing-page',
+        redirectTo: '/login',
         pathMatch: 'full',
       },
       {
