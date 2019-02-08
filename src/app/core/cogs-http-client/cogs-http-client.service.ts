@@ -7,10 +7,6 @@ import { environment } from 'src/environments/environment';
 import { apiDeserializer } from '../../utility/jsonApiParser';
 import { IRequestOptions } from '../../interfaces/http-client';
 
-export function cogsHttpClientCreator(http: HttpClient) {
-  return new CogsHttpClient(http);
-}
-
 @Injectable({
   providedIn: 'root',
 })
@@ -45,4 +41,8 @@ export class CogsHttpClient {
       mergeMap((response) => from(apiDeserializer(response))),
     );
   }
+}
+
+export function cogsHttpClientCreator(http: HttpClient) {
+  return new CogsHttpClient(http);
 }
