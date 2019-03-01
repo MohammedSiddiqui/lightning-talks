@@ -13,6 +13,7 @@
             "app",
             "kebab-case"
         ],
-      "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
+      "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+      "no-empty-interface": false
     }
 }
