@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ShellModule } from './shell/shell.module';
+import { AngularFireModule } from './angular-fire/angular-fire.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ShellModule } from './shell/shell.module';
     BrowserModule,
     BrowserAnimationsModule,
     PrimeNgModule,
+    AngularFireModule,
     CoreModule,
     ShellModule,
     AuthModule,

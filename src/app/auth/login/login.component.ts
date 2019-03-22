@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../core/auth/auth.service';
 import { maxLengthField, minLengthField, patternField, requiredField } from '../../constants/form-validation-messages.constant';
 import { ToastMessageService } from '../../core/toast-message/toast-message.service';
+import { GifStoreService } from '../../core/gif-store/gif-store.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private fb: FormBuilder,
     private toast: ToastMessageService,
+    private data: GifStoreService,
   ) {}
 
   userNameFieldName = 'Name';
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
   userNameMaxLength = 100;
 
   userLoginAttempt = false;
+
+  items = this.data.items;
 
   loginForm = this.fb.group({
     'userName': ['', Validators.compose(
@@ -77,7 +81,7 @@ export class LoginComponent implements OnInit {
   async onValidFormLogin(userData) {
     try {
       const response = await this.auth.userLogin(userData);
-      this.auth.processUserLogin(response);
+      const firestoreResponse = await this.auth.processUserLogin(response);
     } catch (e) {
         if (e instanceof HttpErrorResponse) {
           const errorMessage = e.error.errors[0].detail;
